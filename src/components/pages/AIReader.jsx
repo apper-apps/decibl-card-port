@@ -52,43 +52,43 @@ const AIReader = () => {
   if (loading) return <Loading type="cards" />
   if (error) return <Error message={error} onRetry={loadReadingSessions} />
 
-  return (
-    <div className="space-y-6">
+return (
+    <div className="space-y-8">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
-        <div>
-          <h1 className="text-3xl font-bold text-primary">AI Reader</h1>
-          <p className="text-gray-600 mt-2">Convert any text to natural speech with customizable voices</p>
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-6 md:space-y-0">
+        <div className="space-y-2">
+          <h1 className="text-4xl font-display font-bold text-primary-900 tracking-tight">AI Reader</h1>
+          <p className="text-lg text-neutral-600 font-text">Convert any text to natural speech with customizable voices</p>
         </div>
       </div>
 
-      {/* Tabs */}
-      <div className="flex space-x-1 bg-gray-100 rounded-lg p-1">
+{/* Tabs */}
+      <div className="flex space-x-2 bg-neutral-100 rounded-xl p-2">
         <button
           onClick={() => setActiveTab('reader')}
-          className={`flex-1 px-4 py-2 rounded-md font-medium transition-colors ${
+          className={`flex-1 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
             activeTab === 'reader'
-              ? 'bg-white text-primary shadow-sm'
-              : 'text-gray-600 hover:text-primary'
+              ? 'bg-white text-primary-900 shadow-sm'
+              : 'text-neutral-600 hover:text-primary-700 hover:bg-neutral-50'
           }`}
         >
           <div className="flex items-center justify-center space-x-2">
             <ApperIcon name="BookOpen" className="w-4 h-4" />
-            <span>Reader</span>
+            <span className="font-text">Reader</span>
           </div>
         </button>
         
         <button
           onClick={() => setActiveTab('history')}
-          className={`flex-1 px-4 py-2 rounded-md font-medium transition-colors ${
+          className={`flex-1 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
             activeTab === 'history'
-              ? 'bg-white text-primary shadow-sm'
-              : 'text-gray-600 hover:text-primary'
+              ? 'bg-white text-primary-900 shadow-sm'
+              : 'text-neutral-600 hover:text-primary-700 hover:bg-neutral-50'
           }`}
         >
           <div className="flex items-center justify-center space-x-2">
             <ApperIcon name="History" className="w-4 h-4" />
-            <span>History ({readingSessions.length})</span>
+            <span className="font-text">History ({readingSessions.length})</span>
           </div>
         </button>
       </div>

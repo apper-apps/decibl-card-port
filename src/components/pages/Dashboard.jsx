@@ -97,13 +97,13 @@ const Dashboard = () => {
     }
   ]
 
-  return (
-    <div className="space-y-8">
+return (
+    <div className="space-y-10">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
-        <div>
-          <h1 className="text-3xl font-bold text-primary">Welcome to Decibl</h1>
-          <p className="text-gray-600 mt-2">Your AI-powered voice and reading assistant</p>
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-6 md:space-y-0">
+        <div className="space-y-3">
+          <h1 className="text-5xl font-display font-bold text-primary-900 tracking-tight">Welcome to Decibl</h1>
+          <p className="text-xl text-neutral-600 font-text">Your AI-powered voice and reading assistant</p>
         </div>
         
         <div className="flex items-center space-x-4">
@@ -111,73 +111,74 @@ const Dashboard = () => {
             variant="soft"
             icon="Zap"
             onClick={() => window.location.href = '/voice-notes'}
+            className="shadow-md"
           >
             Quick Record
           </Button>
         </div>
       </div>
 
-      {/* Stats Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+{/* Stats Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          <Card>
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-mint-soft rounded-lg flex items-center justify-center">
-                <ApperIcon name="Mic" className="w-6 h-6 text-primary" />
+          <Card className="shadow-soft">
+            <div className="flex items-center space-x-6">
+              <div className="w-14 h-14 bg-mint-soft rounded-2xl flex items-center justify-center">
+                <ApperIcon name="Mic" className="w-7 h-7 text-accent-green" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-primary">{stats.totalNotes}</p>
-                <p className="text-gray-600 text-sm">Voice Notes</p>
+                <p className="text-3xl font-display font-bold text-primary-900">{stats.totalNotes}</p>
+                <p className="text-neutral-600 text-base font-text">Voice Notes</p>
               </div>
             </div>
           </Card>
         </motion.div>
 
-        <motion.div
+<motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <Card>
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-sky-soft rounded-lg flex items-center justify-center">
-                <ApperIcon name="BookOpen" className="w-6 h-6 text-primary" />
+          <Card className="shadow-soft">
+            <div className="flex items-center space-x-6">
+              <div className="w-14 h-14 bg-sky-soft rounded-2xl flex items-center justify-center">
+                <ApperIcon name="BookOpen" className="w-7 h-7 text-accent-blue" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-primary">{stats.totalSessions}</p>
-                <p className="text-gray-600 text-sm">Reading Sessions</p>
+                <p className="text-3xl font-display font-bold text-primary-900">{stats.totalSessions}</p>
+                <p className="text-neutral-600 text-base font-text">Reading Sessions</p>
               </div>
             </div>
           </Card>
         </motion.div>
 
-        <motion.div
+<motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <Card>
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-yellow-soft rounded-lg flex items-center justify-center">
-                <ApperIcon name="Clock" className="w-6 h-6 text-primary" />
+          <Card className="shadow-soft">
+            <div className="flex items-center space-x-6">
+              <div className="w-14 h-14 bg-amber-soft rounded-2xl flex items-center justify-center">
+                <ApperIcon name="Clock" className="w-7 h-7 text-accent-orange" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-primary">{stats.hoursListened}h</p>
-                <p className="text-gray-600 text-sm">Total Usage</p>
+                <p className="text-3xl font-display font-bold text-primary-900">{stats.hoursListened}h</p>
+                <p className="text-neutral-600 text-base font-text">Total Usage</p>
               </div>
             </div>
           </Card>
         </motion.div>
       </div>
 
-      {/* Feature Cards */}
-      <div className="space-y-6">
-        <h2 className="text-2xl font-semibold text-primary">Features</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+{/* Feature Cards */}
+      <div className="space-y-8">
+        <h2 className="text-3xl font-display font-semibold text-primary-900">Features</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={feature.route}
@@ -191,12 +192,12 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Recent Activity */}
-      <div className="space-y-6">
+{/* Recent Activity */}
+      <div className="space-y-8">
         <div className="flex items-center justify-between">
-          <h2 className="text-2xl font-semibold text-primary">Recent Activity</h2>
+          <h2 className="text-3xl font-display font-semibold text-primary-900">Recent Activity</h2>
           {recentActivity.length > 0 && (
-            <Button variant="outline" size="sm" icon="MoreHorizontal">
+            <Button variant="outline" size="sm" icon="MoreHorizontal" className="shadow-sm">
               View All
             </Button>
           )}
@@ -211,7 +212,7 @@ const Dashboard = () => {
             icon="Activity"
           />
         ) : (
-          <div className="space-y-3">
+<div className="space-y-4">
             {recentActivity.map((activity, index) => (
               <motion.div
                 key={activity.id}
@@ -219,18 +220,18 @@ const Dashboard = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 + index * 0.1 }}
               >
-                <Card hover={false} className="transition-colors hover:bg-gray-50">
-                  <div className="flex items-center space-x-4">
-                    <div className={`w-10 h-10 bg-${activity.color} rounded-lg flex items-center justify-center flex-shrink-0`}>
-                      <ApperIcon name={activity.icon} className="w-5 h-5 text-primary" />
+                <Card hover={false} className="transition-colors hover:bg-neutral-50 shadow-soft">
+                  <div className="flex items-center space-x-6">
+                    <div className={`w-12 h-12 bg-${activity.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
+                      <ApperIcon name={activity.icon} className="w-6 h-6 text-primary-600" />
                     </div>
                     
                     <div className="flex-1 min-w-0">
-                      <p className="font-medium text-gray-800">{activity.title}</p>
-                      <p className="text-sm text-gray-600 truncate">{activity.description}</p>
+                      <p className="font-medium text-neutral-900 font-text">{activity.title}</p>
+                      <p className="text-base text-neutral-600 truncate">{activity.description}</p>
                     </div>
                     
-                    <div className="text-sm text-gray-500 flex-shrink-0">
+                    <div className="text-sm text-neutral-500 flex-shrink-0 font-text">
                       {format(new Date(activity.timestamp), 'MMM d, h:mm a')}
                     </div>
                   </div>

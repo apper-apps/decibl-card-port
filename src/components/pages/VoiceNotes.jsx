@@ -58,43 +58,43 @@ const VoiceNotes = () => {
   if (loading) return <Loading type="cards" />
   if (error) return <Error message={error} onRetry={loadVoiceNotes} />
 
-  return (
-    <div className="space-y-6">
+return (
+    <div className="space-y-8">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
-        <div>
-          <h1 className="text-3xl font-bold text-primary">Voice Notes</h1>
-          <p className="text-gray-600 mt-2">Record, transcribe, and format your voice notes with AI</p>
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between space-y-6 md:space-y-0">
+        <div className="space-y-2">
+          <h1 className="text-4xl font-display font-bold text-primary-900 tracking-tight">Voice Notes</h1>
+          <p className="text-lg text-neutral-600 font-text">Record, transcribe, and format your voice notes with AI</p>
         </div>
       </div>
 
-      {/* Tabs */}
-      <div className="flex space-x-1 bg-gray-100 rounded-lg p-1">
+{/* Tabs */}
+      <div className="flex space-x-2 bg-neutral-100 rounded-xl p-2">
         <button
           onClick={() => setActiveTab('record')}
-          className={`flex-1 px-4 py-2 rounded-md font-medium transition-colors ${
+          className={`flex-1 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
             activeTab === 'record'
-              ? 'bg-white text-primary shadow-sm'
-              : 'text-gray-600 hover:text-primary'
+              ? 'bg-white text-primary-900 shadow-sm'
+              : 'text-neutral-600 hover:text-primary-700 hover:bg-neutral-50'
           }`}
         >
           <div className="flex items-center justify-center space-x-2">
             <ApperIcon name="Mic" className="w-4 h-4" />
-            <span>Record</span>
+            <span className="font-text">Record</span>
           </div>
         </button>
         
         <button
           onClick={() => setActiveTab('history')}
-          className={`flex-1 px-4 py-2 rounded-md font-medium transition-colors ${
+          className={`flex-1 px-6 py-3 rounded-lg font-medium transition-all duration-200 ${
             activeTab === 'history'
-              ? 'bg-white text-primary shadow-sm'
-              : 'text-gray-600 hover:text-primary'
+              ? 'bg-white text-primary-900 shadow-sm'
+              : 'text-neutral-600 hover:text-primary-700 hover:bg-neutral-50'
           }`}
         >
           <div className="flex items-center justify-center space-x-2">
             <ApperIcon name="History" className="w-4 h-4" />
-            <span>History ({voiceNotes.length})</span>
+            <span className="font-text">History ({voiceNotes.length})</span>
           </div>
         </button>
       </div>
@@ -126,20 +126,20 @@ const VoiceNotes = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
-                  >
-                    <Card>
-                      <div className="space-y-4">
+>
+                    <Card className="shadow-soft">
+                      <div className="space-y-6">
                         {/* Note Header */}
                         <div className="flex items-start justify-between">
-                          <div className="flex items-center space-x-3">
-                            <div className="w-10 h-10 bg-mint-soft rounded-lg flex items-center justify-center">
-                              <ApperIcon name="Mic" className="w-5 h-5 text-primary" />
+                          <div className="flex items-center space-x-4">
+                            <div className="w-12 h-12 bg-mint-soft rounded-xl flex items-center justify-center">
+                              <ApperIcon name="Mic" className="w-6 h-6 text-accent-green" />
                             </div>
                             <div>
-                              <p className="font-semibold text-gray-800">
+                              <p className="font-semibold text-primary-900 font-text text-lg">
                                 Voice Note #{note.Id}
                               </p>
-                              <div className="flex items-center space-x-3 text-sm text-gray-600">
+                              <div className="flex items-center space-x-3 text-sm text-neutral-600 mt-1">
                                 <span>{format(new Date(note.createdAt), 'MMM d, yyyy h:mm a')}</span>
                                 <span>•</span>
                                 <span>{formatDuration(note.duration)}</span>
@@ -147,12 +147,13 @@ const VoiceNotes = () => {
                             </div>
                           </div>
                           
-                          <div className="flex items-center space-x-2">
+<div className="flex items-center space-x-3">
                             <Button
                               variant="outline"
                               size="sm"
                               icon="Copy"
                               onClick={() => handleCopyText(note.transcription)}
+                              className="shadow-sm"
                             >
                               Copy
                             </Button>
@@ -161,19 +162,19 @@ const VoiceNotes = () => {
                               size="sm"
                               icon="Trash2"
                               onClick={() => handleDeleteNote(note.Id)}
+                              className="shadow-sm"
                             >
                               Delete
                             </Button>
                           </div>
                         </div>
 
-                        {/* Transcription */}
-                        <div className="bg-gray-50 rounded-lg p-4">
-                          <p className="text-gray-700 leading-relaxed">
+{/* Transcription */}
+                        <div className="bg-neutral-50 rounded-xl p-6">
+                          <p className="text-neutral-700 leading-relaxed font-text">
                             {note.transcription}
                           </p>
                         </div>
-
                         {/* Formatted Versions */}
                         {note.formattedVersions && Object.keys(note.formattedVersions).length > 0 && (
                           <div className="space-y-3">

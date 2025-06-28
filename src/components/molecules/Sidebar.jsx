@@ -10,51 +10,54 @@ const Sidebar = () => {
     { path: '/settings', icon: 'Settings', label: 'Settings' },
   ]
 
-  return (
-    <div className="hidden md:flex flex-col w-64 bg-white border-r border-gray-200 h-full">
-      <div className="p-6 border-b border-gray-200">
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-mint-soft to-sky-soft rounded-lg flex items-center justify-center">
-            <ApperIcon name="Zap" className="w-6 h-6 text-primary" />
+return (
+    <div className="hidden md:flex flex-col w-72 bg-white border-r border-neutral-200 h-full">
+      <div className="p-8 border-b border-neutral-200">
+        <div className="flex items-center space-x-4">
+          <div className="w-12 h-12 bg-gradient-to-br from-mint-soft to-sky-soft rounded-2xl flex items-center justify-center shadow-sm">
+            <ApperIcon name="Zap" className="w-7 h-7 text-accent-green" />
           </div>
           <div>
-            <h1 className="text-xl font-bold text-primary">Decibl</h1>
-            <p className="text-xs text-gray-500">AI Voice Assistant</p>
+            <h1 className="text-2xl font-display font-bold text-primary-900">Decibl</h1>
+            <p className="text-sm text-neutral-500 font-text">AI Voice Assistant</p>
           </div>
         </div>
       </div>
       
-      <nav className="flex-1 p-4 space-y-2">
+<nav className="flex-1 p-6 space-y-3">
         {navItems.map((item) => (
           <NavLink
             key={item.path}
             to={item.path}
             className={({ isActive }) =>
-              `flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 ${
+              `flex items-center space-x-4 px-5 py-4 rounded-xl transition-all duration-200 ${
                 isActive 
-                  ? 'bg-mint-soft text-primary border-l-4 border-primary' 
-                  : 'text-gray-600 hover:bg-gray-50 hover:text-primary'
+                  ? 'bg-mint-soft text-primary-900 shadow-sm' 
+                  : 'text-neutral-600 hover:bg-neutral-50 hover:text-primary-700'
               }`
             }
           >
             {({ isActive }) => (
               <motion.div
-                whileHover={{ x: isActive ? 0 : 4 }}
-                className="flex items-center space-x-3"
+                whileHover={{ 
+                  x: isActive ? 0 : 4,
+                  transition: { type: "spring", stiffness: 400, damping: 15 }
+                }}
+                className="flex items-center space-x-4"
               >
                 <ApperIcon name={item.icon} className="w-5 h-5" />
-                <span className="font-medium">{item.label}</span>
+                <span className="font-medium font-text">{item.label}</span>
               </motion.div>
             )}
           </NavLink>
         ))}
       </nav>
       
-      <div className="p-4 border-t border-gray-200">
-        <div className="bg-gradient-to-r from-mint-soft to-sky-soft rounded-lg p-4 text-center">
-          <ApperIcon name="Sparkles" className="w-6 h-6 text-primary mx-auto mb-2" />
-          <p className="text-sm font-medium text-primary">AI-Powered</p>
-          <p className="text-xs text-gray-600">Voice & Reading Assistant</p>
+<div className="p-6 border-t border-neutral-200">
+        <div className="bg-gradient-to-r from-mint-soft to-sky-soft rounded-xl p-6 text-center shadow-sm">
+          <ApperIcon name="Sparkles" className="w-6 h-6 text-accent-green mx-auto mb-3" />
+          <p className="text-base font-medium text-primary-900 font-text">AI-Powered</p>
+          <p className="text-sm text-neutral-600 font-text">Voice & Reading Assistant</p>
         </div>
       </div>
     </div>

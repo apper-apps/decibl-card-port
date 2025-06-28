@@ -3,44 +3,84 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Apple system fonts - fallback for non-Apple devices */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
+  /* Apple-inspired toast colors */
   --toastify-color-light: #ffffff;
-  --toastify-color-dark: #2C2C2C;
-  --toastify-color-info: #E3F2FD;
-  --toastify-color-success: #E8F5E8;
-  --toastify-color-warning: #FFF8E1;
-  --toastify-color-error: #FCE4EC;
+  --toastify-color-dark: #1d1d1f;
+  --toastify-color-info: #f0f9ff;
+  --toastify-color-success: #f0fdf4;
+  --toastify-color-warning: #fffbeb;
+  --toastify-color-error: #fef2f2;
+  
+  /* Apple-style text rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-.Toastify__toast {
-  border-radius: 8px;
-  font-family: 'Inter', sans-serif;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Apple-style toast notifications */
+.toast-apple {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  box-shadow: 
+    0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04),
+    0 0 0 1px rgba(255, 255, 255, 0.8);
+  color: #1d1d1f;
+  padding: 16px 20px;
+  min-height: auto;
+}
+
+.toast-body-apple {
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
 }
 
 .Toastify__toast-container {
   z-index: 9999;
+  width: auto;
+  max-width: 380px;
+  padding: 0 16px;
+}
+
+.Toastify__toast-container--top-center {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .Toastify__progress-bar {
-  height: 3px;
+  height: 2px;
+  background: linear-gradient(90deg, #007aff, #34c759);
+  border-radius: 1px;
 }
 
-/* Waveform animation classes */
+/* Enhanced waveform with Apple-style gradients */
 .wave-bar {
-  background: linear-gradient(45deg, #E8F5E8, #E3F2FD);
-  border-radius: 2px;
-  animation: wave 1.5s ease-in-out infinite;
+  background: linear-gradient(135deg, #34c759, #007aff);
+  border-radius: 3px;
+  animation: wave 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .wave-bar:nth-child(2) { animation-delay: 0.1s; }
 .wave-bar:nth-child(3) { animation-delay: 0.2s; }
 .wave-bar:nth-child(4) { animation-delay: 0.3s; }
 .wave-bar:nth-child(5) { animation-delay: 0.4s; }
+.wave-bar:nth-child(6) { animation-delay: 0.5s; }
+.wave-bar:nth-child(7) { animation-delay: 0.6s; }
 
-/* Recording pulse animation */
+/* Apple-style recording pulse */
 .recording-pulse {
   animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
@@ -49,9 +89,69 @@
   0%, 100% { 
     opacity: 1;
     transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.4);
   }
   50% { 
-    opacity: 0.8;
-    transform: scale(1.05);
+    opacity: 0.9;
+    transform: scale(1.02);
+    box-shadow: 0 0 0 8px rgba(255, 59, 48, 0.1);
+  }
+}
+
+/* Apple-style focus states */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-accent-blue focus:ring-offset-2 focus:ring-offset-white;
+}
+
+/* Smooth scrolling for Apple-like experience */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography enhancements */
+.text-display {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.text-body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.004em;
+}
+
+.text-caption {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.006em;
+}
+
+/* Apple-style button states */
+.btn-apple {
+  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.btn-apple:active {
+  transform: scale(0.98);
+}
+
+/* Enhanced accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .toast-apple {
+    border: 2px solid #000;
+    background: #fff;
   }
 }

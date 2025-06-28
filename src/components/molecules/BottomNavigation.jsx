@@ -10,28 +10,33 @@ const BottomNavigation = () => {
     { path: '/settings', icon: 'Settings', label: 'Settings' },
   ]
 
-  return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-4 py-2 z-50">
+return (
+    <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-neutral-200 px-6 py-3 z-50 shadow-lg">
       <div className="flex items-center justify-around">
         {navItems.map((item) => (
           <NavLink
             key={item.path}
             to={item.path}
             className={({ isActive }) =>
-              `flex flex-col items-center justify-center py-2 px-3 rounded-lg transition-colors ${
-                isActive ? 'text-primary' : 'text-gray-500'
+              `flex flex-col items-center justify-center py-2 px-4 rounded-xl transition-all duration-200 ${
+                isActive ? 'text-primary-900' : 'text-neutral-500'
               }`
             }
           >
             {({ isActive }) => (
               <>
                 <motion.div
-                  whileTap={{ scale: 0.95 }}
-                  className={`p-2 rounded-lg ${isActive ? 'bg-mint-soft' : ''}`}
+                  whileTap={{ 
+                    scale: 0.95,
+                    transition: { type: "spring", stiffness: 400, damping: 15 }
+                  }}
+                  className={`p-3 rounded-xl transition-all duration-200 ${
+                    isActive ? 'bg-mint-soft shadow-sm' : 'hover:bg-neutral-50'
+                  }`}
                 >
                   <ApperIcon name={item.icon} className="w-5 h-5" />
                 </motion.div>
-                <span className="text-xs mt-1 font-medium">{item.label}</span>
+                <span className="text-xs mt-1 font-medium font-text">{item.label}</span>
               </>
             )}
           </NavLink>
