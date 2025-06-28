@@ -1,0 +1,31 @@
+[
+  {
+    "Id": 1,
+    "audioUrl": "demo-audio-1.mp3",
+    "transcription": "Today I had an amazing idea for a new productivity app that could help people organize their daily tasks more efficiently. The key feature would be AI-powered prioritization that learns from user behavior and suggests the optimal order for completing tasks.",
+    "formattedVersions": {
+      "social": "💡 Just had an incredible idea for a productivity app with AI-powered task prioritization! Imagine an assistant that learns your patterns and suggests the perfect order for your daily tasks. #ProductivityHack #AI #Innovation",
+      "blog": "# Revolutionizing Daily Productivity: An AI-Powered Approach\n\nProductivity apps are everywhere, but what if we could create something truly intelligent? Today I conceptualized an application that goes beyond simple task management by incorporating AI-driven prioritization that adapts to individual user behaviors and preferences..."
+    },
+    "duration": 45,
+    "createdAt": "2024-01-15T10:30:00Z"
+  },
+  {
+    "Id": 2,
+    "audioUrl": "demo-audio-2.mp3",
+    "transcription": "Meeting notes from today's team standup: Sarah mentioned the new design system is ready for review. John completed the backend API for user authentication. We need to schedule a code review session for Friday afternoon.",
+    "formattedVersions": {
+      "article": "# Team Standup Summary - January 15th\n\n## Key Updates\n- **Design System**: Sarah has completed the new design system and it's ready for team review\n- **Backend Development**: John successfully implemented the user authentication API\n- **Upcoming**: Code review session scheduled for Friday afternoon\n\n## Action Items\n- Review design system (All team members)\n- Prepare code for Friday review session"
+    },
+    "duration": 28,
+    "createdAt": "2024-01-15T14:45:00Z"
+  },
+  {
+    "Id": 3,
+    "audioUrl": "demo-audio-3.mp3",
+    "transcription": "Quick reminder to pick up groceries on the way home. Need milk, bread, eggs, and those organic apples Sarah likes. Also remember to call Mom about dinner plans for Sunday.",
+    "formattedVersions": {},
+    "duration": 15,
+    "createdAt": "2024-01-14T17:20:00Z"
+  }
+]

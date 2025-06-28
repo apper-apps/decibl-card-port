@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 1,
+    "text": "# The Future of Artificial Intelligence\n\nArtificial Intelligence (AI) continues to reshape our world in unprecedented ways. From healthcare innovations to autonomous vehicles, AI technologies are becoming increasingly sophisticated and accessible.\n\n## Current Applications\n\n- **Healthcare**: AI-powered diagnostic tools\n- **Transportation**: Self-driving cars and traffic optimization\n- **Education**: Personalized learning platforms\n- **Finance**: Fraud detection and algorithmic trading\n\nThe rapid advancement in machine learning algorithms, particularly deep learning and neural networks, has enabled computers to perform tasks that were once thought to be exclusively human.",
+    "cleanedText": "The Future of Artificial Intelligence\n\nArtificial Intelligence (AI) continues to reshape our world in unprecedented ways. From healthcare innovations to autonomous vehicles, AI technologies are becoming increasingly sophisticated and accessible.\n\nCurrent Applications\n\nHealthcare: AI-powered diagnostic tools\nTransportation: Self-driving cars and traffic optimization\nEducation: Personalized learning platforms\nFinance: Fraud detection and algorithmic trading\n\nThe rapid advancement in machine learning algorithms, particularly deep learning and neural networks, has enabled computers to perform tasks that were once thought to be exclusively human.",
+    "voice": "sarah",
+    "speed": 1.0,
+    "progress": 75,
+    "createdAt": "2024-01-15T09:15:00Z"
+  },
+  {
+    "Id": 2,
+    "text": "Breaking: Scientists have discovered a new method for carbon capture that could significantly reduce atmospheric CO2 levels. The breakthrough involves a novel chemical process that transforms carbon dioxide into useful materials while requiring minimal energy input. [1][2]\n\n*This development could be game-changing for climate action efforts worldwide.*",
+    "cleanedText": "Breaking: Scientists have discovered a new method for carbon capture that could significantly reduce atmospheric CO2 levels. The breakthrough involves a novel chemical process that transforms carbon dioxide into useful materials while requiring minimal energy input.\n\nThis development could be game-changing for climate action efforts worldwide.",
+    "voice": "james",
+    "speed": 1.25,
+    "progress": 100,
+    "createdAt": "2024-01-14T16:30:00Z"
+  },
+  {
+    "Id": 3,
+    "text": "Recipe: Perfect Homemade Pizza Dough\n\nIngredients:\n- 2 cups all-purpose flour\n- 1 tsp active dry yeast\n- 3/4 cup warm water\n- 1 tbsp olive oil\n- 1 tsp salt\n- 1 tsp sugar\n\nInstructions:\n1. Mix warm water, sugar, and yeast. Let sit for 5 minutes.\n2. Combine flour and salt in a large bowl.\n3. Add yeast mixture and olive oil to flour.\n4. Knead for 8-10 minutes until smooth.\n5. Let rise for 1 hour in a greased bowl.",
+    "cleanedText": "Recipe: Perfect Homemade Pizza Dough\n\nIngredients:\n2 cups all-purpose flour\n1 tsp active dry yeast\n3/4 cup warm water\n1 tbsp olive oil\n1 tsp salt\n1 tsp sugar\n\nInstructions:\n1. Mix warm water, sugar, and yeast. Let sit for 5 minutes.\n2. Combine flour and salt in a large bowl.\n3. Add yeast mixture and olive oil to flour.\n4. Knead for 8-10 minutes until smooth.\n5. Let rise for 1 hour in a greased bowl.",
+    "voice": "maria",
+    "speed": 0.75,
+    "progress": 45,
+    "createdAt": "2024-01-13T19:45:00Z"
+  }
+]

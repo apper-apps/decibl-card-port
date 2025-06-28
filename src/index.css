@@ -1,0 +1,57 @@
+@import 'react-toastify/dist/ReactToastify.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --toastify-color-light: #ffffff;
+  --toastify-color-dark: #2C2C2C;
+  --toastify-color-info: #E3F2FD;
+  --toastify-color-success: #E8F5E8;
+  --toastify-color-warning: #FFF8E1;
+  --toastify-color-error: #FCE4EC;
+}
+
+.Toastify__toast {
+  border-radius: 8px;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Toastify__toast-container {
+  z-index: 9999;
+}
+
+.Toastify__progress-bar {
+  height: 3px;
+}
+
+/* Waveform animation classes */
+.wave-bar {
+  background: linear-gradient(45deg, #E8F5E8, #E3F2FD);
+  border-radius: 2px;
+  animation: wave 1.5s ease-in-out infinite;
+}
+
+.wave-bar:nth-child(2) { animation-delay: 0.1s; }
+.wave-bar:nth-child(3) { animation-delay: 0.2s; }
+.wave-bar:nth-child(4) { animation-delay: 0.3s; }
+.wave-bar:nth-child(5) { animation-delay: 0.4s; }
+
+/* Recording pulse animation */
+.recording-pulse {
+  animation: pulse-soft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
